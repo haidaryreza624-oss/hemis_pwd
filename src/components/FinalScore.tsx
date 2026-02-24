@@ -102,8 +102,8 @@ export default function FinalScore() {
             key={semester.semester_number}
             onClick={() => setSelectedSemester(semester.semester_number)}
             className={`px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap transition-all ${selectedSemester === semester.semester_number
-                ? `${getPrimaryColor(color).replace('text-', 'bg-')} text-white shadow-md`
-                : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-100 dark:border-slate-700'
+              ? `${getPrimaryColor(color).replace('text-', 'bg-')} text-white shadow-md`
+              : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-100 dark:border-slate-700'
               }`}
           >
             سمستر {semester.semester_number}
@@ -144,8 +144,8 @@ export default function FinalScore() {
                 </div>
                 <div className="text-left">
                   <span className={`text-lg font-bold ${(subject.pass_score || 0) >= 90 ? 'text-emerald-500' :
-                      (subject.pass_score || 0) >= 80 ? 'text-blue-500' :
-                        (subject.pass_score || 0) >= 70 ? 'text-amber-500' : 'text-red-500'
+                    (subject.pass_score || 0) >= 80 ? 'text-blue-500' :
+                      (subject.pass_score || 0) >= 70 ? 'text-amber-500' : 'text-red-500'
                     }`}>
                     {subject.pass_score}
                   </span>

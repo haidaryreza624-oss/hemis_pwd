@@ -32,7 +32,7 @@ export default function Intro() {
         >
           <GraduationCap size={80} />
         </motion.div>
-        
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function Intro() {
         >
           پیوند
         </motion.h1>
-        
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

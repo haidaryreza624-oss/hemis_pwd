@@ -75,18 +75,17 @@ export default function Score() {
   return (
     <div className="p-4 space-y-6 pb-24">
       <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-2">نمرات تفصیلی</h2>
-      
+
       {/* Semester Tabs */}
       <div className="flex overflow-x-auto pb-2 gap-2 no-scrollbar" style={{ scrollbarWidth: 'none' }}>
         {data.semesters.map((semester) => (
           <button
             key={semester.semester_number}
             onClick={() => setSelectedSemester(semester.semester_number)}
-            className={`px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap transition-all ${
-              selectedSemester === semester.semester_number
+            className={`px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap transition-all ${selectedSemester === semester.semester_number
                 ? `${getPrimaryColor(color).replace('text-', 'bg-')} text-white shadow-md`
                 : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-100 dark:border-slate-700'
-            }`}
+              }`}
           >
             سمستر {semester.semester_number}
           </button>
@@ -98,7 +97,7 @@ export default function Score() {
           {currentSemester.subjects.map((subject) => {
             const uniqueId = `sem${currentSemester.semester_number}-sub${subject.number}`;
             const isExpanded = expandedSubject === uniqueId;
-            
+
             return (
               <motion.div
                 key={uniqueId}
@@ -111,9 +110,8 @@ export default function Score() {
                   className="w-full p-4 flex items-center justify-between"
                 >
                   <div className="flex items-center gap-3 text-right">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold ${
-                      subject.total_100 >= 55 ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400' : 'bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400'
-                    }`}>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold ${subject.total_100 >= 55 ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400' : 'bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400'
+                      }`}>
                       {subject.total_100}
                     </div>
                     <div>

@@ -37,9 +37,8 @@ export default function Settings() {
             <button
               key={c}
               onClick={() => setColor(c)}
-              className={`w-full aspect-square rounded-full flex items-center justify-center transition-transform ${
-                getPrimaryBg(c)
-              } ${color === c ? 'scale-110 ring-2 ring-offset-2 ring-slate-300 dark:ring-slate-600' : 'opacity-70 hover:opacity-100'}`}
+              className={`w-full aspect-square rounded-full flex items-center justify-center transition-transform ${getPrimaryBg(c)
+                } ${color === c ? 'scale-110 ring-2 ring-offset-2 ring-slate-300 dark:ring-slate-600' : 'opacity-70 hover:opacity-100'}`}
             >
               {color === c && <Check size={16} className="text-white" />}
             </button>
@@ -68,11 +67,10 @@ export default function Settings() {
             <button
               key={f.id}
               onClick={() => setFont(f.id)}
-              className={`w-full p-3 rounded-xl text-right flex items-center justify-between border transition-all ${
-                font === f.id
+              className={`w-full p-3 rounded-xl text-right flex items-center justify-between border transition-all ${font === f.id
                   ? `${getLightBg(color)} ${getPrimaryColor(color)} border-transparent`
                   : 'bg-slate-50 dark:bg-slate-900 border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-300'
-              }`}
+                }`}
               style={{ fontFamily: f.family }}
             >
               <span>{f.label}</span>

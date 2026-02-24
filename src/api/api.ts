@@ -1,4 +1,5 @@
-const rawBase = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+// Prefer HTTPS for the production Railway host to avoid HTTP -> HTTPS redirects
+const rawBase = import.meta.env.VITE_API_URL || 'https://fastapihemisfinal-production.up.railway.app/';
 
 function normalizeBaseUrl(raw: string) {
   let url = raw.trim();
@@ -10,6 +11,16 @@ function normalizeBaseUrl(raw: string) {
 }
 
 const BASE_URL = normalizeBaseUrl(rawBase);
+
+// Debug info to help diagnose malformed BASE_URL values
+try {
+  // Validate URL (will throw if invalid)
+  // eslint-disable-next-line no-new
+  new URL(BASE_URL);
+} catch (e) {
+  console.warn('[api] BASE_URL appears invalid:', BASE_URL, 'raw:', rawBase);
+}
+console.debug('[api] BASE_URL resolved to', BASE_URL);
 
 function buildUrl(endpoint: string) {
   if (!endpoint.startsWith('/')) endpoint = '/' + endpoint;
