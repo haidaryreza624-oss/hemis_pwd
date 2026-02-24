@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Vazirmatn:wght@100..900&display=swap');
+
+:root {
+  --font-sans: "Vazirmatn", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Amiri", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary: 79 70 229; /* Indigo-600 */
+  --bg-primary: 255 255 255;
+  --text-primary: 15 23 42;
+}
+
+.dark {
+  --bg-primary: 15 23 42;
+  --text-primary: 248 250 252;
+}
+
+body {
+  font-family: var(--font-sans);
+  direction: rtl;
+  @apply bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50;
+}
+
+/* Safe area padding for mobile devices (iPhone home indicator) */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+/* Custom Scrollbar for mobile-like feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

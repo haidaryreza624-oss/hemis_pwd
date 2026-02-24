@@ -1,0 +1,5 @@
+{
+  "name": "HEMIS Student Portal",
+  "description": "A mobile-first student portal for HEMIS with login, dashboard, and smooth animations.",
+  "requestFramePermissions": []
+}
